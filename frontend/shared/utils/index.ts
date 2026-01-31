@@ -1,116 +1,100 @@
-/**
- * 格式化价格
- */
-export function formatPrice(price: number): string {
+// 工具函数集合
+
+// 格式化价格
+export const formatPrice = (price: number): string => {
   return `¥${price.toFixed(2)}`
 }
 
-/**
- * 格式化距离
- */
-export function formatDistance(distance: number): string {
-  if (distance < 1) {
-    return `${Math.round(distance * 1000)}m`
-  }
-  return `${distance.toFixed(1)}km`
+// 格式化时间
+export const formatTime = (date: string | Date): string => {
+  const d = new Date(date)
+  return `${d.getMonth() + 1}-${d.getDate()} ${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`
 }
 
-/**
- * 格式化时间
- */
-export function formatTime(date: Date | string): string {
-  const d = typeof date === 'string' ? new Date(date) : date
-  return `${d.getHours().toString().padStart(2, '0')}:${d.getMinutes().toString().padStart(2, '0')}`
+// 格式化日期
+export const formatDate = (date: string | Date): string => {
+  const d = new Date(date)
+  return `${d.getFullYear()}-${(d.getMonth() + 1).toString().padStart(2, '0')}-${d.getDate().toString().padStart(2, '0')}`
 }
 
-/**
- * 相对时间（如：3分钟前）
- */
-export function relativeTime(date: Date | string): string {
-  const d = typeof date === 'string' ? new Date(date) : date
-  const now = new Date()
-  const diff = Math.floor((now.getTime() - d.getTime()) / 1000)
-  
-  if (diff < 60) {
-    return '刚刚'
-  }
-  if (diff < 3600) {
-    return `${Math.floor(diff / 60)}分钟前`
-  }
-  if (diff < 86400) {
-    return `${Math.floor(diff / 3600)}小时前`
-  }
-  return `${Math.floor(diff / 86400)}天前`
-}
-
-/**
- * 手机号脱敏
- */
-export function maskPhone(phone: string): string {
+// 格式化手机号
+export const formatPhone = (phone: string): string => {
   return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
 }
 
-/**
- * 金额数字转大写
- */
-export function amountToChinese(num: number): string {
-  const digits = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖']
-  const units = ['', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿']
-  const decimalUnits = ['角', '分']
-  
-  let integerPart = Math.floor(num)
-  let decimalPart = Math.round((num - integerPart) * 100)
-  
-  let result = ''
-  
-  // 处理整数部分
-  let unitIndex = 0
-  let str = ''
-  while (integerPart > 0) {
-    const digit = integerPart % 10
-    if (digit !== 0) {
-      str = digits[digit] + units[unitIndex] + str
-    } else if (str && !str.startsWith(digits[0])) {
-      str = digits[0] + str
-    }
-    integerPart = Math.floor(integerPart / 10)
-    unitIndex++
-  }
-  result = str || digits[0]
-  
-  // 处理小数部分
-  if (decimalPart > 0) {
-    const decimalStr = (decimalPart / 10).toFixed(0)
-    if (Math.floor(decimalPart / 10) > 0) {
-      result += digits[Math.floor(decimalPart / 10)] + decimalUnits[0]
-    }
-    if (decimalPart % 10 > 0) {
-      result += digits[decimalPart % 10] + decimalUnits[1]
-    }
-  }
-  
-  return result
+// 距离格式化（公里）
+export const formatDistance = (km: number): string => {
+  if (km < 1) return `${Math.round(km * 1000)}m`
+  return `${km.toFixed(1)}km`
 }
 
-/**
- * 延迟函数
- */
-export function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
+// 时间格式化（分钟）
+export const formatDuration = (minutes: number): string => {
+  if (minutes < 60) return `${Math.round(minutes)}分钟`
+  const hours = Math.floor(minutes / 60)
+  const mins = minutes % 60
+  return `${hours}小时${mins}分钟`
 }
 
-/**
- * 生成订单号
- */
-export function generateOrderNo(): string {
-  const date = new Date()
-  const yyyy = date.getFullYear()
-  const MM = (date.getMonth() + 1).toString().padStart(2, '0')
-  const dd = date.getDate().toString().padStart(2, '0')
-  const HH = date.getHours().toString().padStart(2, '0')
-  const mm = date.getMinutes().toString().padStart(2, '0')
-  const ss = date.getSeconds().toString().padStart(2, '0')
-  const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0')
-  
-  return `${yyyy}${MM}${dd}${HH}${mm}${ss}${random}`
+// 验证手机号
+export const isValidPhone = (phone: string): boolean => {
+  return /^1\d{10}$/.test(phone)
+}
+
+// 验证验证码
+export const isValidCode = (code: string): boolean => {
+  return /^\d{4,6}$/.test(code)
+}
+
+// 状态文本映射
+export const statusTextMap: Record<string, string> = {
+  pending: '待付款',
+  paid: '已付款',
+  confirmed: '已接单',
+  cooking: '制作中',
+  ready: '待取餐',
+  delivering: '配送中',
+  completed: '已完成',
+  cancelled: '已取消',
+  refunded: '已退款'
+}
+
+// 订单状态颜色
+export const statusColorMap: Record<string, string> = {
+  pending: '#ff9800',
+  paid: '#2196f3',
+  confirmed: '#9c27b0',
+  cooking: '#ff9800',
+  ready: '#00bcd4',
+  delivering: '#2196f3',
+  completed: '#4caf50',
+  cancelled: '#9e9e9e',
+  refunded: '#f44336'
+}
+
+// 防抖函数
+export const debounce = <T extends (...args: any[]) => any>(
+  fn: T,
+  delay: number
+): ((...args: Parameters<T>) => void) => {
+  let timer: NodeJS.Timeout | null = null
+  return (...args: Parameters<T>) => {
+    if (timer) clearTimeout(timer)
+    timer = setTimeout(() => fn(...args), delay)
+  }
+}
+
+// 节流函数
+export const throttle = <T extends (...args: any[]) => any>(
+  fn: T,
+  interval: number
+): ((...args: Parameters<T>) => void) => {
+  let lastTime = 0
+  return (...args: Parameters<T>) => {
+    const now = Date.now()
+    if (now - lastTime >= interval) {
+      lastTime = now
+      fn(...args)
+    }
+  }
 }

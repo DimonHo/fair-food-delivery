@@ -1,0 +1,163 @@
+.rider-home-page {
+  min-height: 100vh;
+  background: #0f0f23;
+}
+
+.login-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  font-size: 18px;
+}
+
+.stats-bar {
+  display: flex;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4d4f;
+  display: block;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.tab-bar {
+  display: flex;
+  background: #1a1a2e;
+  padding: 0 15px;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 15px;
+  color: #888;
+  border-bottom: 2px solid transparent;
+  
+  &.active {
+    color: #ff4d4f;
+    border-bottom-color: #ff4d4f;
+  }
+}
+
+.order-list {
+  height: calc(100vh - 150px);
+  padding: 15px;
+}
+
+.order-card {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.order-no {
+  font-size: 14px;
+  color: #888;
+}
+
+.earning {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
+.order-route {
+  margin-bottom: 15px;
+}
+
+.route-item {
+  display: flex;
+  gap: 10px;
+  
+  &.pickup .dot { color: #ff4d4f; }
+  &.delivery .dot { color: #4caf50; }
+}
+
+.dot {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.route-info {
+  flex: 1;
+}
+
+.route-label {
+  font-size: 12px;
+  color: #888;
+  display: block;
+}
+
+.route-text {
+  font-size: 15px;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+}
+
+.route-addr {
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+}
+
+.route-line {
+  width: 2px;
+  height: 20px;
+  background: #333;
+  margin-left: 4px;
+  margin: 5px 0 5px 4px;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.distance {
+  font-size: 13px;
+  color: #888;
+}
+
+.grab-btn {
+  background: linear-gradient(135deg, #ff4d4f 0%, #ff6b6b 100%);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 8px 25px;
+}
+
+.empty-tasks {
+  text-align: center;
+  padding: 50px 0;
+  color: #666;
+}

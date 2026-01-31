@@ -1,0 +1,88 @@
+.address-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 15px;
+}
+
+.address-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.addr-info {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.phone {
+  font-size: 14px;
+  color: #666;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  background: #ff4d4f;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.addr-detail {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.addr-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.action-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-text {
+  font-size: 13px;
+  color: #666;
+  
+  &.delete {
+    color: #ff4d4f;
+  }
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 50px 0;
+  color: #999;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4f;
+  color: #fff;
+  padding: 12px 50px;
+  border-radius: 25px;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(255, 77, 79, 0.4);
+}

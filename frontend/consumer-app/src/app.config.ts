@@ -1,10 +1,15 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',
+    'pages/search/index',
     'pages/merchant/index',
+    'pages/login/index',
     'pages/cart/index',
+    'pages/checkout/index',
     'pages/order/list',
     'pages/order/detail',
+    'pages/address/index',
+    'pages/address/add',
     'pages/profile/index'
   ],
   window: {

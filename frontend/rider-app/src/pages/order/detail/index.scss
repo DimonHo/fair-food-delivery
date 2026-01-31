@@ -1,0 +1,195 @@
+.rider-order-detail-page {
+  min-height: 100vh;
+  background: #0f0f23;
+  padding: 15px;
+  padding-bottom: 80px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.status-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+  margin-bottom: 15px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #333;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  
+  .active & {
+    background: #ff4d4f;
+    color: #fff;
+  }
+}
+
+.step-text {
+  font-size: 12px;
+  color: #666;
+  
+  .active & {
+    color: #ff4d4f;
+  }
+}
+
+.step-line {
+  width: 50px;
+  height: 3px;
+  background: #333;
+  margin: 0 10px;
+  margin-top: -25px;
+  
+  &.active {
+    background: #ff4d4f;
+  }
+}
+
+.order-info-card {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.order-no {
+  font-size: 14px;
+  color: #888;
+}
+
+.earning {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff4d4f;
+}
+
+.route-section {
+  margin-bottom: 15px;
+}
+
+.route-item {
+  background: #16213e;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.route-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.route-icon {
+  font-size: 18px;
+}
+
+.route-title {
+  font-size: 14px;
+  color: #888;
+}
+
+.route-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+}
+
+.route-addr {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.route-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  
+  button {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 12px;
+    padding: 5px 15px;
+  }
+}
+
+.route-arrow {
+  text-align: center;
+  font-size: 20px;
+  color: #ff4d4f;
+  padding: 8px 0;
+}
+
+.items-section {
+  padding-top: 15px;
+  border-top: 1px solid #2a2a4a;
+}
+
+.section-title {
+  font-size: 14px;
+  color: #888;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.item-text {
+  font-size: 13px;
+  color: #ccc;
+  display: block;
+  padding: 3px 0;
+}
+
+.action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  background: #1a1a2e;
+}
+
+.action-btn {
+  width: 100%;
+  height: 45px;
+  border-radius: 22px;
+  font-size: 16px;
+  border: none;
+  
+  &.primary {
+    background: linear-gradient(135deg, #ff4d4f 0%, #ff6b6b 100%);
+    color: #fff;
+  }
+}
