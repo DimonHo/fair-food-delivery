@@ -1,0 +1,82 @@
+@import './variables.scss';
+
+/* 重置样式 */
+page {
+  background: var(--bg-secondary);
+}
+
+view, text, image {
+  box-sizing: border-box;
+}
+
+/* 滚动区域 */
+.scroll-view {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 列表样式 */
+.list-item {
+  background: var(--bg-primary);
+  border-radius: 12rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 卡片样式 */
+.card {
+  background: var(--bg-primary);
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+/* 分割线 */
+.divider {
+  height: 1rpx;
+  background: var(--border-color);
+  margin: 20rpx 0;
+}
+
+/* 加载更多 */
+.load-more {
+  text-align: center;
+  padding: 30rpx;
+  color: var(--text-tertiary);
+  font-size: 24rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 0;
+  
+  .icon {
+    font-size: 100rpx;
+    margin-bottom: 20rpx;
+  }
+  
+  .text {
+    color: var(--text-tertiary);
+    margin-bottom: 30rpx;
+  }
+}
+
+/* 价格样式 */
+.price {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.price-symbol {
+  font-size: 24rpx;
+}
+
+.price-integer {
+  font-size: 36rpx;
+}
+
+.price-decimal {
+  font-size: 24rpx;
+}
